@@ -6,9 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const New = () => {
   return (
     <View>
-      <View style={styles.imagePicker}>
-        <Icon name="rocket" size={20} />
-      </View>
+      <View style={styles.imagePicker}></View>
     </View>
   );
 };
