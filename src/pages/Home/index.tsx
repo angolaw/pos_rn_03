@@ -4,10 +4,12 @@ import api from '../../api';
 import {FlatList} from 'react-native-gesture-handler';
 import UserCard from '../../components/UserCard';
 import FAB from 'react-native-fab';
+import {useNavigation} from '@react-navigation/native';
 // import { Container } from './styles';
 
 const Home = () => {
   const [persons, setPersons] = useState([]);
+  const navigation = useNavigation();
 
   //get users from json-server
   useEffect(() => {
@@ -30,7 +32,9 @@ const Home = () => {
       <FAB
         buttonColor="#00a680"
         iconTextColor="#FFFFFF"
-        onClickAction={() => {}}
+        onClickAction={() => {
+          navigation.navigate('New');
+        }}
         visible={true}
       />
     </View>

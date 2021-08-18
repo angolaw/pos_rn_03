@@ -1,4 +1,4 @@
-import {AvatarGenerator} from 'random-avatar-generator';
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 

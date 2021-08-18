@@ -145,7 +145,6 @@
 				C12C70D8D702A1F6ED3A72F4 /* Pods-crud-crudTests.debug.xcconfig */,
 				FC99B41F39585888603B7173 /* Pods-crud-crudTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
