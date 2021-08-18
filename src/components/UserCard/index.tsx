@@ -4,7 +4,7 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 
 // import { Container } from './styles';
 
-interface Person {
+export interface Person {
   data: {
     name: string;
     age: number;
