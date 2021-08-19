@@ -1,40 +1,49 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 // import { Container } from './styles';
 
 export interface Person {
   data: {
-    name: string;
+    id: string;
     age: number;
     email: string;
     company: string;
+    phone: string;
     avatar: string;
+    name: string;
   };
 }
 
 const UserCard = ({data}: Person) => {
+  const navigation = useNavigation();
   return (
-    <View style={styles.container}>
-      <View style={styles.innerContainer}>
-        <View style={styles.imageContainer}>
-          <Image
-            source={{uri: data.avatar}}
-            resizeMode="contain"
-            style={styles.image}
-          />
-        </View>
-        <View style={styles.textsContainer}>
-          <Text style={styles.name}>{data.name}</Text>
-          <Text style={styles.subtitlesText}>{`Idade: ${data.age
-            .toString()
-            .substring(0, 2)}`}</Text>
-          <Text style={styles.subtitlesText}>{`Email: ${data.email}`}</Text>
-          <Text style={styles.subtitlesText}>{`Empresa: ${data.company}`}</Text>
+    <TouchableOpacity
+      onPress={() => {
+        navigation.navigate('Details', {data});
+      }}>
+      <View style={styles.container}>
+        <View style={styles.innerContainer}>
+          <View style={styles.imageContainer}>
+            <Image
+              source={{uri: data.avatar}}
+              resizeMode="contain"
+              style={styles.image}
+            />
+          </View>
+          <View style={styles.textsContainer}>
+            <Text style={styles.name}>{data.name}</Text>
+            <Text style={styles.subtitlesText}>{`Idade: ${data.age
+              .toString()
+              .substring(0, 2)}`}</Text>
+            <Text style={styles.subtitlesText}>{`Email: ${data.email}`}</Text>
+            <Text
+              style={styles.subtitlesText}>{`Empresa: ${data.company}`}</Text>
+          </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
