@@ -1,5 +1,4 @@
 import {useNavigation, useRoute} from '@react-navigation/native';
-import axios from 'axios';
 import React, {useState} from 'react';
 import {
   StyleSheet,
@@ -26,7 +25,7 @@ const Details = () => {
   const navigation = useNavigation();
 
   async function sendUpdatedData(updatedData: Person) {
-    const response = updateData(updatedData)
+    updateData(updatedData)
       .then(() => {
         console.log('updated data!!!');
         navigation.navigate('Home');
@@ -34,7 +33,6 @@ const Details = () => {
       .catch(error => {
         console.log(error);
       });
-    console.log(response);
   }
 
   return (
@@ -77,7 +75,6 @@ const Details = () => {
               company: company || data.company,
             },
           };
-          console.log(updatedData.data);
 
           sendUpdatedData(updatedData);
         }}>
