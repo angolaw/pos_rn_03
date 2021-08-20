@@ -1,23 +1,13 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Person} from '../../utils/person';
 
 // import { Container } from './styles';
 
-export interface Person {
-  data: {
-    id: string;
-    age: number;
-    email: string;
-    company: string;
-    phone: string;
-    avatar: string;
-    name: string;
-  };
-}
-
 const UserCard = ({data}: Person) => {
   const navigation = useNavigation();
+
   return (
     <TouchableOpacity
       onPress={() => {
@@ -34,8 +24,8 @@ const UserCard = ({data}: Person) => {
           </View>
           <View style={styles.textsContainer}>
             <Text style={styles.name}>{data.name}</Text>
-            <Text style={styles.subtitlesText}>{`Idade: ${data.age
-              .toString()
+            <Text style={styles.subtitlesText}>{`Idade: ${data?.age
+              ?.toString()
               .substring(0, 2)}`}</Text>
             <Text style={styles.subtitlesText}>{`Email: ${data.email}`}</Text>
             <Text

@@ -4,9 +4,10 @@ import React, {useState} from 'react';
 import {Button, ImagePickerIOS, TextInput} from 'react-native';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {launchImageLibrary} from 'react-native-image-picker';
+import api from '../../api';
 import {Person} from '../../components/UserCard';
 // import { Container } from './styles';
-
+import {createUser} from '../../service/service';
 const New = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -16,14 +17,13 @@ const New = () => {
   const navigation = useNavigation();
   async function savePerson() {
     const data = {
-      id: Math.random(),
       name,
       phone,
       age,
       company,
       email,
     };
-    await axios.post('http://192.168.2.110:3333/persons', data).then(() => {
+    await createUser(data).then(() => {
       navigation.navigate('Home');
     });
   }
