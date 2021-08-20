@@ -1,29 +1,25 @@
 import {useNavigation} from '@react-navigation/native';
-import axios from 'axios';
 import React, {useState} from 'react';
-import {Button, ImagePickerIOS, TextInput} from 'react-native';
-import {Image, StyleSheet, Text, View} from 'react-native';
-import {launchImageLibrary} from 'react-native-image-picker';
-import api from '../../api';
-import {Person} from '../../components/UserCard';
+import {Text, TextInput, TouchableOpacity} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 // import { Container } from './styles';
 import {createUser} from '../../service/service';
+import {Person} from '../../utils/person';
 const New = () => {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
   const [age, setAge] = useState('0');
   const [company, setCompany] = useState('');
   const [email, setEmail] = useState('');
   const navigation = useNavigation();
   async function savePerson() {
+    const ageNumber = parseInt(age, 10);
     const data = {
       name,
-      phone,
-      age,
+      age: ageNumber,
       company,
       email,
       avatar: `https://i.pravatar.cc/300?u=${email}`,
-    } as Person;
+    };
     await createUser(data).then(() => {
       navigation.navigate('Home');
     });
@@ -31,7 +27,6 @@ const New = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.imagePicker} />
       <View>
         <TextInput
           placeholder="Nome"
@@ -42,7 +37,7 @@ const New = () => {
 
         <TextInput
           placeholder="Idade"
-          value={age.toString()}
+          value={age}
           style={styles.input}
           keyboardType="numeric"
           onChangeText={text => setAge(text)}
@@ -61,7 +56,9 @@ const New = () => {
           onChangeText={text => setCompany(text)}
         />
       </View>
-      <Button title="Criar" onPress={() => savePerson()} />
+      <TouchableOpacity style={styles.button} onPress={() => savePerson()}>
+        <Text style={styles.buttonText}> {'Criar'}</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -71,6 +68,25 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
+  },
+  buttonText: {
+    fontSize: 20,
+    color: '#fff',
+    alignContent: 'center',
+    textAlign: 'center',
+  },
+  button: {
+    alignSelf: 'stretch',
+    marginTop: 50,
+    width: 300,
+    height: 56,
+    borderRadius: 10,
+    padding: 10,
+    marginLeft: 50,
+    backgroundColor: '#00a680',
+    margin: 5,
+    alignContent: 'center',
+    justifyContent: 'center',
   },
   input: {
     alignSelf: 'stretch',

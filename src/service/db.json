@@ -685,6 +685,14 @@
       "email": "Henriette9@gmail.com",
       "company": "Crona Group",
       "id": "04608fc7-05a4-4a16-8371-30b9717ffe7d"
+    },
+    {
+      "name": "Jose",
+      "age": "35",
+      "company": "Milky Way",
+      "email": "jose@jose.com",
+      "avatar": "https://i.pravatar.cc/300?u=jose@jose.com",
+      "id": "hHL8APr"
     }
   ]
 }
