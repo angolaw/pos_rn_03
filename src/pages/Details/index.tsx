@@ -14,7 +14,7 @@ import {Person} from '../../utils/person';
 
 const Details = () => {
   const router = useRoute();
-  const {data}: Person = router.params;
+  const {data}: Person = router.params as Person;
   // name, phone, email, avatar, address, company, id useStates
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -27,7 +27,6 @@ const Details = () => {
   async function sendUpdatedData(updatedData: Person) {
     updateData(updatedData)
       .then(() => {
-        console.log('updated data!!!');
         navigation.navigate('Home');
       })
       .catch(error => {
