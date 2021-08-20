@@ -1,6 +1,7 @@
 import api from '../api';
+import {Person} from '../utils/person';
 
-async function createUser(data) {
+async function createUser(data: Person) {
   return api.post('http://192.168.2.110:3333/persons', data);
 }
 async function getAll() {
@@ -8,7 +9,7 @@ async function getAll() {
 
   return response.data;
 }
-async function updateData(updatedData) {
+async function updateData(updatedData: Person) {
   return await api.put(
     `http://192.168.2.110:3333/persons/${updatedData.data.id}`,
     updatedData.data,
