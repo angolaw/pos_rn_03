@@ -22,7 +22,8 @@ const New = () => {
       age,
       company,
       email,
-    };
+      avatar: `https://i.pravatar.cc/300?u=${email}`,
+    } as Person;
     await createUser(data).then(() => {
       navigation.navigate('Home');
     });
@@ -38,13 +39,7 @@ const New = () => {
           style={styles.input}
           onChangeText={text => setName(text)}
         />
-        <TextInput
-          placeholder="Telefone"
-          value={phone}
-          keyboardType="name-phone-pad"
-          style={styles.input}
-          onChangeText={text => setPhone(text)}
-        />
+
         <TextInput
           placeholder="Idade"
           value={age.toString()}
@@ -53,17 +48,17 @@ const New = () => {
           onChangeText={text => setAge(text)}
         />
         <TextInput
-          placeholder="Empresa"
-          value={company}
-          style={styles.input}
-          onChangeText={text => setCompany(text)}
-        />
-        <TextInput
           placeholder="Email"
           value={email}
           style={styles.input}
           autoCorrect={false}
           onChangeText={text => setEmail(text)}
+        />
+        <TextInput
+          placeholder="Empresa"
+          value={company}
+          style={styles.input}
+          onChangeText={text => setCompany(text)}
         />
       </View>
       <Button title="Criar" onPress={() => savePerson()} />

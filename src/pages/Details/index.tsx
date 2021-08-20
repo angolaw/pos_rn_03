@@ -16,11 +16,11 @@ const Details = () => {
   const router = useRoute();
   const {data}: Person = router.params as Person;
   // name, phone, email, avatar, address, company, id useStates
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [age, setAge] = useState(0);
+  const [name, setName] = useState(data.name);
+  const [email, setEmail] = useState(data.email);
+  const [age, setAge] = useState(data.age);
 
-  const [company, setCompany] = useState('');
+  const [company, setCompany] = useState(data.company);
 
   const navigation = useNavigation();
 
@@ -43,7 +43,7 @@ const Details = () => {
         onChangeText={text => setName(text)}
       />
       <TextInput
-        placeholder={'0'}
+        placeholder={`${data.age}`}
         value={age.toString()}
         style={styles.input}
         onChangeText={text => setAge(parseInt(text, 10))}
