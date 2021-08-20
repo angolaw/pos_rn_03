@@ -1,6 +1,6 @@
 import {useNavigation, useRoute} from '@react-navigation/native';
 import axios from 'axios';
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   Text,
@@ -8,7 +8,8 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {Person} from '../../components/UserCard';
+import {updateData} from '../../service/service';
+import {Person} from '../../utils/person';
 
 // import { Container } from './styles';
 
@@ -25,11 +26,7 @@ const Details = () => {
   const navigation = useNavigation();
 
   async function sendUpdatedData(updatedData: Person) {
-    const response = await axios
-      .put(
-        `http://192.168.2.110:3333/persons/${updatedData.data.id}`,
-        updatedData.data,
-      )
+    const response = updateData(updatedData)
       .then(() => {
         console.log('updated data!!!');
         navigation.navigate('Home');

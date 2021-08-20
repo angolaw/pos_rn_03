@@ -8,4 +8,11 @@ async function getAll() {
 
   return response.data;
 }
-export {createUser, getAll};
+async function updateData(updatedData) {
+  return await api.put(
+    `http://192.168.2.110:3333/persons/${updatedData.data.id}`,
+    updatedData.data,
+  );
+}
+
+export {createUser, getAll, updateData};
