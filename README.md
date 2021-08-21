@@ -1,8 +1,10 @@
 # Aplicativo de CRUD React Native
 
+### App feito para a Pós Graduação em Desenvolvimento Mobile Unyleya - 2021/2
+
 ## App em funcionamento
 
-![](screenshots/crud1.gif)
+![](screenshots/crud.gif)
 
 ## Executando o APP
 
