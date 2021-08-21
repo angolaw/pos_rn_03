@@ -2,6 +2,8 @@
 
 ## App em funcionamento
 
+![](screenshots/crud1.gif)
+
 ## Executando o APP
 
 - Na pasta clonada, execute `yarn` para que sejam baixadas as dependências do projeto
