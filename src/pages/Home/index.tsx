@@ -37,7 +37,7 @@ const Home = () => {
         buttonColor="#00a680"
         iconTextColor="#FFFFFF"
         onClickAction={() => {
-          navigation.navigate('New');
+          navigation.navigate('Novo');
         }}
         visible={true}
       />

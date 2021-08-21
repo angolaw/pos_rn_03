@@ -23,13 +23,13 @@ const UserCard = ({data}: Person) => {
       onPress={async () => {
         //send delete command to API
         deleteUser(data.id).then(() => {
-          navigation.navigate('Home');
+          navigation.navigate('Listagem');
         });
       }}>
       <Swipeable renderRightActions={RightActions}>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('Details', {data});
+            navigation.navigate('Detalhes', {data});
           }}>
           <View style={styles.container}>
             <View style={styles.innerContainer}>

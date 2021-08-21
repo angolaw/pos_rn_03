@@ -27,7 +27,7 @@ const Details = () => {
   async function sendUpdatedData(updatedData: Person) {
     updateData(updatedData)
       .then(() => {
-        navigation.navigate('Home');
+        navigation.navigate('Listagem');
       })
       .catch(error => {
         console.log(error);

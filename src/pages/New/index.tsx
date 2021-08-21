@@ -21,7 +21,7 @@ const New = () => {
       avatar: `https://i.pravatar.cc/300?u=${email}`,
     };
     await createUser(data).then(() => {
-      navigation.navigate('Home');
+      navigation.navigate('Novo');
     });
   }
 

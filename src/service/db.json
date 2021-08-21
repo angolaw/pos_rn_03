@@ -8,13 +8,6 @@
       "id": "96abe51a-7a82-482a-b361-bf0736a4f435"
     },
     {
-      "name": "Jill Breitenberg",
-      "age": 89103,
-      "email": "Wilfred_Sporer@yahoo.com",
-      "company": "Buckridge Inc",
-      "id": "e24e9c3f-b2e0-4a5b-8363-2d24bcf2e03e"
-    },
-    {
       "name": "Marianne Wolf",
       "age": 71747,
       "email": "Davin57@yahoo.com",
@@ -672,6 +665,14 @@
       "email": "jose@jose.com",
       "avatar": "https://i.pravatar.cc/300?u=jose@jose.com",
       "id": "hHL8APr"
+    },
+    {
+      "name": "Jose Maria",
+      "age": 39,
+      "company": "ABC",
+      "email": "jose@jose.com",
+      "avatar": "https://i.pravatar.cc/300?u=jose@jose.com",
+      "id": "a_0_AxI"
     }
   ]
 }
