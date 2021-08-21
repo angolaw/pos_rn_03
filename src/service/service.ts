@@ -15,5 +15,8 @@ async function updateData(updatedData: Person) {
     updatedData.data,
   );
 }
+async function deleteUser(id: string) {
+  return await api.delete(`http://192.168.2.110:3333/persons/${id}`);
+}
 
-export {createUser, getAll, updateData};
+export {createUser, getAll, updateData, deleteUser};

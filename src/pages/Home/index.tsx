@@ -21,11 +21,10 @@ const Home = () => {
           avatar: `https://i.pravatar.cc/300?u=${person.email}`,
         };
       });
-      console.log(response);
       setPersons(newData);
     }
     getPersons();
-  }, []);
+  }, [persons]);
 
   return (
     <View>
