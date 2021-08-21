@@ -10,7 +10,7 @@ async function getAll() {
   return response.data;
 }
 async function updateData(updatedData: Person) {
-  return await api.put(
+  return await api.patch(
     `http://192.168.2.110:3333/persons/${updatedData.data.id}`,
     updatedData.data,
   );
