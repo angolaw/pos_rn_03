@@ -20,8 +20,8 @@ const New = () => {
       email,
       avatar: `https://i.pravatar.cc/300?u=${email}`,
     };
-    await createUser(data).then(() => {
-      navigation.navigate('Novo');
+    createUser(data).then(() => {
+      navigation.navigate('Listagem');
     });
   }
 
